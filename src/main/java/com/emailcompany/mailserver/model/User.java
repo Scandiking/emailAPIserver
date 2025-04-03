@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.Email;
 import lombok.Setter;
 
 @Getter
@@ -21,6 +22,7 @@ public class User {
     private String username;
 
     @Column(nullable = false, unique = true)
+    @Email(message = "Email should be valid. Remember '@' and '.'")
     private String email;
 
     @Column(nullable = false)

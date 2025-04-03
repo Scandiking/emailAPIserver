@@ -47,7 +47,7 @@ public class UserService {
                 .map(user -> {
                     user.setUsername(updatedUser.getUsername());
                     user.setEmail(updatedUser.getEmail());
-                    user.setPassword(updatedUser.getPassword());  // TODO: Encrypt password before saving
+                    user.setPassword(updatedUser.getPassword());
                     return userRepository.save(user);
                 });
     }

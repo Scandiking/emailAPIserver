@@ -30,6 +30,9 @@ public class Email {
     @Column(nullable = false, columnDefinition="TEXT")
     private String body;
 
+    @Column(nullable = false)
+    private LocalDateTime timestamp;
+
     private LocalDateTime sentAt;
     private LocalDateTime receivedAt;
 
