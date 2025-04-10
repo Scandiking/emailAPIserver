@@ -1,5 +1,9 @@
 # Arbeidskrav: Mail Server using REST API
 
+![Bilde](src/main/resources/static/resources/Epostsending11.png)
+
+![]()
+
 ---
 
 ## What is this?
@@ -95,143 +99,310 @@ Needless to say, this quote is not for __this__ project, but for custom ROMs, bu
 </details>
 
 ---
-## Table of Contents
 
-- Testing the API with Postman or Curl
-  - [Create a user `POST`](#create-a-user)
-  - Retrieve all users `GET`  
-    - Go to [/api/v1/users](/api/v1/users)
-  - Retrieve a user by id `GET`  
-    - Go to [/api/v1/users/1](/api/v1/users/1) (replace 1 with the ID)
-  - Retrieve a user by email `GET`
-  - Update user `PUT`
-  - Delete user `DELETE`
-- Explanation of endpoints
+## Table of contents
+<!-- TOC -->
+* [Arbeidskrav: Mail Server using REST API](#arbeidskrav-mail-server-using-rest-api)
+  * [What is this?](#what-is-this)
+  * [Assignment text:](#assignment-text)
+  * [Table of contents](#table-of-contents)
+  * [Create](#create-)
+    * [Create a user `POST`](#create-a-user-post)
+    * [Create email `POST`](#create-email-post)
+  * [Retrieve](#retrieve)
+    * [Retrieve all users `GET`](#retrieve-all-users-get)
+    * [Retrieve a user by id `GET`](#retrieve-a-user-by-id-get)
+    * [Retrieve all e-mails `GET`](#retrieve-all-e-mails-get)
+    * [Retrieve e-mail by id `GET`](#retrieve-e-mail-by-id-get)
+  * [Update](#update)
+    * [Update user `PUT`](#update-user-put)
+    * [Delete user `DELETE`](#delete-user-delete)
+    * [Explanation of endpoints](#explanation-of-endpoints)
+<!-- TOC -->
 
 ---
 
-### Create a user
+![Bilde](src/main/resources/static/resources/Mail.png)
+
+---
+
+## Setup instructions
+1. Clone the repository to your local machine.
+2. Open the project in your favorite IDE (e.g., IntelliJ IDEA, Eclipse).
+3. Make sure you have Java JDK 20 or above installed.
+4. Make sure you have Maven installed.
+5. Make sure you have PostgreSQL installed and running.
+6. Create a new PostgreSQL database for the project.
+7. Update the `application.properties` file with your PostgreSQL database connection details. For example:
+   ```properties
+   spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+   ```
+   The default one in this project is username=`postgres` and password=`password`. The database name is `mailserver`.
+8. Run the application using your IDE or by executing the following command in the terminal:
+   ```bash
+   mvn spring-boot:run
+   ```
+9. The application should start, and you can access the REST API at `http://localhost:8080/api/`.
+10. You can use Postman or any other API testing tool to interact with the API endpoints.
+11. You can also use the URL bar in your browser to retrieve information. This is not recommended for `POST`, `PUT`, or `DELETE` methods, but it works for `GET` methods.
+
+
+## Create 
+### Create a user `POST`
+
 <details>
-    <summary>
-        Creating a user using Postman
-    </summary>
-<ol>
-    <li>Open Postman and create a new HTTPS workspace if you don't already have one</li>
-    <li>We want to create a user so choose the <code>POST</code> label under the REST API basics: CRUD, test & variable dropdown menu.</li>
-    <li>Enter the URL <code>http://localhost:8080/api/users</code> in the address bar</li>
-<li>In the body field, make sure raw JSON is selected.</li>
-<li>
-  <pre>// Replace John Doe's information with your own.
-    <code>
-      {
-        "username": "john_doe",
-        "email": "john_doe@email.com",
-        "password": "password"
-      }
-    </code>
-  </pre>
-</li>
-<li>Press the <code>Send</code> button.</li>
-<li>If you see the number <code>200</code> in a toast everything went as expected. If you see something else, something went wrong.</li>
-</ol>
+<summary>
+Using Postman
+</summary>
+
+1. Open Postman and create a new HTTPS workspace if you don't already have one
+2. We want to create a user so choose the <code>POST</code> label under the REST API basics: CRUD, test & variable dropdown menu.
+3. Enter the URL http://localhost:8080/api/users in the address bar
+4. In the body field, make sure raw JSON is selected.
+5.
+   ```json
+   {
+     "username": "john_doe",
+     "email": "john_doe@email.com",
+     "password": "password"
+   }
+   ```
+
+6. Press the <code>Send</code> button.
+   If you see the number <code>200</code> in a toast everything went as expected. If you see something else, something went wrong.
+
 </details>
 
 <details>
-    <summary>
-        Creating a user using URL parameters in the browser bar
-    </summary>
-    <ol>
-        <li>Decide username.</li>
-        <li>Decice email</li>
-        <li>Decide password.</li>
-        <li>Enter the following URL in the browser bar: <code>http://localhost:8080/api/users</code></li>
-        <li>Replace the placeholders with your own information. Example: <code>http://localhost:8080/api/users?username=john_doe&email=john_doe@email.com&password=password</code></li>
-    </ol>
+<summary>
+Using the URL bar
+</summary>
+
+☝️🤓 This is unsupported and not recommended. You can only __retrieve__ (`GET`) information from the URL bar.
+
 </details>
 
-
-### Retrieve all users
+### Create email `POST`
 <details>
-    <summary>
-        Retrieve all users using Postman
-    </summary>
-    <p>Text</p>
+<summary>Using Postman</summary>
+
+1. Make sure you've chosen POST in your Postman workspace.
+2. In the raw JSON, enter fields "fromEmail", "toEmail", "subject", and "body". Leave id and timestamp empty. For example:
+    ```json
+    {
+        "fromEmail":"johndoe@email.com",
+        "toEmail":"janesmith@email.com",
+        "subject":"HOA Terms and conditions",
+        "body":"Blablabla legal mumbojumbo see attachment"
+    }
+    ```
+3. Hit Send.
+
+   >You can only add one e-mail at a time. You can not add several e-mails at once. This is not supported.
+
+</details>
+
+## Retrieve
+
+### Retrieve all users `GET`
+<details>
+  <summary>
+  Using Postman
+  </summary>
+
+1. Make sure you have chosen GET in your Postman workspace.
+2. Enter the URL http://localhost:8080/api/users in the address bar
+3. Press the <code>Send</code> button.
+
 </details>
 
 <details>
-    <summary>
-        Retrieve all users using the browser bar
-    </summary>
-    <p>Text</p>
+  <summary>
+  Using the URL bar
+  </summary>
+
+1. Open your browser and enter the URL http://localhost:8080/api/users in the address bar
+2. Press enter.
+
 </details>
 
-### Retrieve a user by id
+### Retrieve a user by id `GET`
 
-### Retrieve a user by email
+<details>
+  <summary>
+    Using Postman
+  </summary>
 
-### Update user
+1. Make sure you have chosen GET in your Postman workspace.
+2. Enter the URL http://localhost:8080/api/users/{id} in the address bar
+3. Replace {id} with the id of the user you want to retrieve.
+4. Press the <code>Send</code> button.
 
-### Delete user
+</details>
+
+<details>
+  <summary>
+    Using the URL bar
+  </summary>
+
+1. Open your browser and enter the URL http://localhost:8080/api/users/{id} in the address bar
+2. Replace {id} with the id of the user you want to retrieve.
+3. Press enter.
+
+</details>
+
+### Retrieve all e-mails `GET`
+<details>
+  <summary>
+    Using Postman
+  </summary>
+
+1. Make sure you have chosen GET in your Postman workspace.
+2. Enter the URL http://localhost:8080/api/emails in the address bar
+3. Press the <code>Send</code> button.
+
+</details>
+
+<details>
+  <summary>
+    Using the URL bar
+  </summary>
+
+1. Open your browser and enter the URL http://localhost:8080/api/emails in the address bar
+2. Press enter.
+</details>
+
+### Retrieve e-mail by id `GET`
+
+<details>
+<summary>Using Postman</summary>
+
+1. Make sure you have chosen GET in your Postman workspace.
+2. Enter the URL http://localhost:8080/api/emails/{id} in the address bar
+3. Replace {id} with the id of the e-mail you want to retrieve.
+4. Press the <code>Send</code> button.
+
+</details>
+
+<details>
+<summary>Using the URL bar</summary>
+
+1. Open your browser and enter the URL http://localhost:8080/api/emails/{id} in the address bar
+2. Replace {id} with the id of the e-mail you want to retrieve.
+3. Press enter.
+
+</details>
+
+## Update
+### Update user `PUT`
+
+<details>
+<summary>
+Using Postman
+</summary>
+
+1. Make sure you have chosen PUT in your Postman workspace.
+2. Enter the URL http://localhost:8080/api/users/{id} in the address bar
+3. Replace {id} with the id of the user you want to update.
+4. In the body field, make sure raw JSON is selected.
+5. Change the JSON fields to the new values you want to update. Leave the ID field.
+6. Click Send.
+</details>
+
+<details>
+<summary>
+Using the URL bar
+</summary>
+
+You can only retrieve information from the URL bar, you can not `POST`, `PUT` or `DELETE`. Even on YouTube, this is the case. Let's try to change the title of someone's video. First we need the video ID. The arguments for YouTube are `watch`. Watch what? `v` for video. So `youtube.com/watch?v={videoID}` lets us watch that video. This equals the `GET` method. First we need to get the video-ID of the video we want to change the title of. Get the [video ID here](https://www.youtube.com/watch?v=dQw4w9WgXcQ). Then change the `watch` keyword to `edit` and hit enter.
+
+</details>
+
+## Delete
+
+### Delete user `DELETE`
+<details>
+<summary>
+Using Postman
+</summary>
+
+1. Copy the entry of the person you want to delete by using the GET method.
+2. Make sure you have chosen the `DELETE` method.
+3. Paste the information into the `Body` field. Like this:
+    
+   ```json
+    {
+      "id": 1,
+      "username": "johndoe0",
+      "email": "john_doe@email.com",
+      "password": "password"
+    }
+    ```
+   
+    Note: You can not delete several entries at once. You can only delete one entry at a time.  
+   
+
+4. Hit Send.
+</details>
+
+<details>
+<summary>
+Using the URL bar
+</summary>
+Nope. Absolutely not. This is not allowed nor recommended.
+</details>
+
+### Delete email `DELETE`
+
+<details>
+<summary>
+Using Postman
+</summary>
+
+1. Copy the entry of the email you want to delete by using the GET method.
+2. Make sure you have chosen the `DELETE` method.
+3. Paste the information into the `Body` field. Like this:
+
+    ```json
+    {
+        "id": 3,
+        "fromEmail": "johndoe@email.com",
+        "toEmail": "janesmith@email.com",
+        "subject": "RE:RE:HOA Terms and conditions",
+        "body": "There is no need to send it anew, you already have it. The e-mail client uses the paperclip as a symbol of attachment. Please click the attachment, in which is the paperclip, in order to download the HOA terms and conditions.",
+        "timestamp": "2025-04-09T15:50:10.814065",
+        "sentAt": null,
+        "receivedAt": null
+    }
+    ```
+4. Hit Send.
+
+> You can also copy the `localhost:8080/api/emails/{id}` and click Send after replacing the {id} with the id of the email you want to delete. This will delete the email with the id you specified. You can not delete several entries at once. You can only delete one entry at a time.
+
+</details>
+
+<details>
+<summary>
+Using the URL bar
+</summary>
+You can't.
+</details>
 
 ### Explanation of endpoints
-| HTTP method | Endpoint                 | Description              |
-|-------------|--------------------------|--------------------------|
-| GET         | /api/users               | Retrieve all users       |
-| GET         | /api/users/{id}          | Retrieve a user by id    |
-| GET         | /api/users/email/{email} | Retrieve a user by email |
-| POST        | /api/users               | Create a new user        |
-| PUT         | /api/users/{id}          | Update a user by id      |
-| DELETE      | /api/users/{id}          | Delete a user by id      |
 
-### Testing the API with Postman or `curl`
+| HTTP method | Endpoint         | Description              | URL bar support |
+|-------------|------------------|--------------------------|-----------------|
+| POST        | /api/users       | Create a new user.       | No              |
+| POST        | /api/emails      | Create a new email.      | No              |
+| GET         | /api/users       | Retrieve all users.      | Yes             |
+| GET         | /api/users/{id}  | Retrieve a user by id.   | Yes             |
+| GET         | /api/emails      | Retrieve all emails.     | Yes             |
+| GET         | /api/emails/{id} | Retrieve an email by id. | Yes             |
+| PUT         | /api/users/{id}  | Update a user by id.     | No              |
+| PUT         | /api/emails/{id} | Update an email by id.   | No              |
+| DELETE      | /api/users/{id}  | Delete a user by id.     | No              |
+| DELETE      | /api/emails/{id} | Delete an email by id.   | No              |
 
-#### Create a user
-> You might need to add v1 after api. So that
-> `localhost:8080/api/users` becomes 
-> `localhost:8080/api/v1/users`
-> > _«It works on __my__ computer»_  
-> 
-> > -__-"
 
-```code
-POST http://localhost:8080/api/users
-Content-Type: application/json
-
-{
-    "username": "john_doe",
-    "email": "john@example.com",
-    "password": "securepass"
-}
-```
-
-#### Retrieve all users
-```code
-GET http://localhost:8080/api/users
-```
-
-#### Retrieve a user by id
-```code
-GET http://localhost:8080/api/users/1
-```
-
-#### Retrieve a user by email
-```code
-GET http://localhost:8080/api/users/email/john@example.com
-```
-
-#### Update User
-```code
-PUT http://localhost:8080/api/users/1
-Content-Type: application/json
-
-{
-    "username": "john_doe",
-    "email": "john_new@example.com",
-    "password": "password123"
-}
-```
-
-#### Delete User
-```code
-DELETE http://localhost:8080/api/users/1
-```

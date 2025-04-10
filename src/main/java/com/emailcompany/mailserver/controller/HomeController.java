@@ -25,15 +25,32 @@ public class HomeController {
                 </head>
                 <body>
                     <h1>Welcome to the Mail Server!</h1>
+                    <img src="/resources/Epostsending11.png" alt="Logo" style="width: 500px; height: auto;">
                     <p>Try the following endpoints:</p>
                     
+                    <!-- CREATE OPERATIONS -->
+                    <!-- Can only use GET method in URL bar -->
+                    
+                    <!-- READ operations -->
                     <!-- See a list of users  -->
                     <p>See a list of users:</p>
-                    <a href="/api/v1/users">/api/v1/users</a>
+                    <a href="/api/users">/api/users</a> <code>GET</code>
                     
                     <!-- See a list of emails -->
                     <p>See a list of emails:</p>
-                    <a href="/api/v1/emails">/api/v1/emails</a>
+                    <a href="/api/emails">/api/emails</a> <code>GET</code>
+                    
+                    <!-- UPDATE operations -->
+                    <!-- Can only use GET method in URL bar -->
+                    
+                    <!-- DELETE operations -->
+                    <!-- Can only use GET method in URL bar -->
+                    
+                    <!-- Delete an email -->
+                    <!-- Can only use GET method in URL bar-->
+                    
+                    <p>To create, update or delete entries, please use Postman as the URL bar method only supports the <code>GET</code> HTTP method.</p>
+                    <p>For more information, please refer to the API documentation in README.md.</p>
                 </body>
                 </html>
                 """;

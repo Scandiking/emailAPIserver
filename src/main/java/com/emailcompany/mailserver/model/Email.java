@@ -33,8 +33,4 @@ public class Email {
     @Column(nullable = false)
     private LocalDateTime timestamp;
 
-    private LocalDateTime sentAt;
-    private LocalDateTime receivedAt;
-
-
 }
