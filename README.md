@@ -142,7 +142,7 @@ Needless to say, this quote is not for __this__ project, but for custom ROMs, bu
    spring.datasource.username=your_username
    spring.datasource.password=your_password
    ```
-   The default one in this project is username=`postgres` and password=`password`. The database name is `mailserver`.
+   The default one in this project is username=`postgres` and password=`123`. The database name is `mail_server`.
 8. Run the application using your IDE or by executing the following command in the terminal:
    ```bash
    mvn spring-boot:run

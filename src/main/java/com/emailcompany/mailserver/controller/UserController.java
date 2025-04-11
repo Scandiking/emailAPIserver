@@ -1,3 +1,8 @@
+// The controller for the User entity. This controller handles HTTP requests related to user operations.
+// It uses the UserService to perform operations on the User entity. The controller is annotated with @RestController,
+// which indicates that it's a Spring MVC controller.
+// The @RequestMapping annotation specifies the base URL for all the endpoints in this controller.
+
 package com.emailcompany.mailserver.controller;
 
 import com.emailcompany.mailserver.model.User;

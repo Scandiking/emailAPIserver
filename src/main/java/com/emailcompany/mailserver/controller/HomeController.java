@@ -1,3 +1,9 @@
+// The @HomeController class is a Spring Boot REST controller that handles HTTP requests to the root URL ("/") of the
+// application. It provides a simple HTML response with links to various API endpoints for users and emails.
+// The HTML response includes instructions for using the API and a suggestion to use Postman for creating, updating, or
+// deleting entries. The class is annotated with @RestController and @RequestMapping to define the base URL for the
+// controller.
+
 package com.emailcompany.mailserver.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;

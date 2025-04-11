@@ -1,3 +1,6 @@
+// The Emailcontroller class is a Spring REST controller that handles HTTP requests related to email operations.
+// It provides endpoints for creating, retrieving, updating, and deleting emails.
+
 package com.emailcompany.mailserver.controller;
 
 import com.emailcompany.mailserver.model.Email;

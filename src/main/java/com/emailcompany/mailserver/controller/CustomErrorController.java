@@ -1,3 +1,8 @@
+// The custom error controller handles errors in a Spring Boot application.
+// It implements the ErrorController interface and provides a custom error page for HTTP errors.
+// The controller is annotated with @Controller, indicating that it's a Spring MVC controller.
+
+
 package com.emailcompany.mailserver.controller;
 
 import jakarta.servlet.RequestDispatcher;

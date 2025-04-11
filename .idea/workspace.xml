@@ -4,21 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="315c9cd1-f2d7-4a5a-8ec0-7bf947d46c81" name="Changes" comment="tried gitting it ALL">
+    <list default="true" id="315c9cd1-f2d7-4a5a-8ec0-7bf947d46c81" name="Changes" comment="pushed .idea files in order to check whether one could run the program from the launch button in intellij instead of having to use cmd for those who clone the repo">
+      <change afterPath="$PROJECT_DIR$/Driftsdokumentasjon.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/EmailApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/MailServerApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/controller/CustomErrorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/controller/EmailController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/model/Email.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/repository/EmailRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/emailcompany/mailserver/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resources/Epostsending11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/resources/Mail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/EmailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/EmailApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/controller/EmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/model/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/model/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/repository/EmailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/repository/EmailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emailcompany/mailserver/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/emailcompany/mailserver/EmailApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/emailcompany/mailserver/EmailApplicationTests.java" afterDir="false" />
+    </list>
+    <list id="b0ee949c-1d92-4661-a6e1-7b5b19cf8112" name="Changes by user" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +55,14 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/resources/application.properties">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="2" changelist="315c9cd1-f2d7-4a5a-8ec0-7bf947d46c81" />
+        <range start1="7" end1="7" start2="9" end2="11" changelist="b0ee949c-1d92-4661-a6e1-7b5b19cf8112" />
+      </ranges>
+    </file>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -141,6 +151,7 @@
       <workItem from="1744202827733" duration="8110000" />
       <workItem from="1744272724057" duration="4772000" />
       <workItem from="1744277894343" duration="3914000" />
+      <workItem from="1744367407129" duration="3384000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -184,7 +195,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1744277322758</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="pushed .idea files in order to check whether one could run the program from the launch button in intellij instead of having to use cmd for those who clone the repo">
+      <option name="closed" value="true" />
+      <created>1744368387569</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1744368387569</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +223,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="added red files" />
     <MESSAGE value="tried gitting it ALL" />
-    <option name="LAST_COMMIT_MESSAGE" value="tried gitting it ALL" />
+    <MESSAGE value="pushed .idea files in order to check whether one could run the program from the launch button in intellij instead of having to use cmd for those who clone the repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="pushed .idea files in order to check whether one could run the program from the launch button in intellij instead of having to use cmd for those who clone the repo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

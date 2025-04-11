@@ -1,3 +1,7 @@
+/*
+This is the main class for the Email Application. It is responsible for starting the Spring Boot application.
+ */
+
 package com.emailcompany.mailserver;
 
 import org.springframework.boot.SpringApplication;
