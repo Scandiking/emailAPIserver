@@ -106,6 +106,7 @@ Needless to say, this quote is not for __this__ project, but for custom ROMs, bu
   * [What is this?](#what-is-this)
   * [Assignment text:](#assignment-text)
   * [Table of contents](#table-of-contents)
+  * [Setup instructions](#setup-instructions)
   * [Create](#create-)
     * [Create a user `POST`](#create-a-user-post)
     * [Create email `POST`](#create-email-post)
@@ -116,7 +117,9 @@ Needless to say, this quote is not for __this__ project, but for custom ROMs, bu
     * [Retrieve e-mail by id `GET`](#retrieve-e-mail-by-id-get)
   * [Update](#update)
     * [Update user `PUT`](#update-user-put)
+  * [Delete](#delete)
     * [Delete user `DELETE`](#delete-user-delete)
+    * [Delete email `DELETE`](#delete-email-delete)
     * [Explanation of endpoints](#explanation-of-endpoints)
 <!-- TOC -->
 
@@ -144,6 +147,13 @@ Needless to say, this quote is not for __this__ project, but for custom ROMs, bu
    ```bash
    mvn spring-boot:run
    ```
+   If this does not work, go to the root directory of the project and open a terminal in which you write:
+
+    ```cmd
+    .\mvnw.cmd spring-boot:run
+    ```
+   ... and hit Enter.
+
 9. The application should start, and you can access the REST API at `http://localhost:8080/api/`.
 10. You can use Postman or any other API testing tool to interact with the API endpoints.
 11. You can also use the URL bar in your browser to retrieve information. This is not recommended for `POST`, `PUT`, or `DELETE` methods, but it works for `GET` methods.
